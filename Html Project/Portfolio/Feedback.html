@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header><h1>Feedback Form:</h1></header>
+    <main>
+        <section>
+            <h3>Enter Your Login details:</h3>
+            <form action="/action.php">
+                <input type="text" placeholder="Enter Your Name">
+                <br>
+                <input type="password" placeholder="Enter Your Password">
+                <br>
+                <h3>Choose Any one of these:</h3>
+                <input type="radio" value="Student" name="Belonging">Student
+                <br>
+                <input type="radio" value="Organisation" name="Belonging">Organisation
+                <h3>Enter Your Skills:</h3>
+                <input type="checkbox" value="Python" name="Skills">Python
+                <br>
+                <input type="checkbox" value="MySql" name="Skills">MySQL
+                <br>
+                <input type="checkbox" value="Java" name="Skills">Java
+                <br>
+                <input type="checkbox" value="C++" name="Skills">C++
+                <h3>Select Your City:</h3>
+                <select name="City" id="City">
+                    <option value="Kolkata">Kolkata</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Bangalore">Bangalore</option>
+                    <option value="Delhi">Delhi</option>
+                </select>
+                <h3>Enter Your Valuable Feedback:</h3>
+                <textarea name="Feddback" placeholder="Enter Your Feedback here:"></textarea>
+                <br>
+                <input type="submit" value="Submit">
+                
+
+
+
+            </form>
+        </section>
+    </main>
+</body>
+</html>
