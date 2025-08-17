@@ -1,0 +1,83 @@
+Yes 👍 you’ve got it —
+
+For **block-level elements**, when the **first child** has a `margin-top`, that margin will usually **collapse with the parent’s top margin** instead of pushing the child down.
+
+---
+
+### 🔹 The general rule from the CSS spec:
+
+* **Adjacent vertical margins** can collapse.
+* That means:
+
+  * Parent and first child (`margin-top`).
+  * Parent and last child (`margin-bottom`).
+  * Two sibling elements with vertical margins touching.
+
+---
+
+### ✅ Examples
+
+**Case 1 – First child `margin-top` collapses into parent**
+
+```html
+<div class="parent">
+  <div class="child">Hello</div>
+</div>
+```
+
+```css
+.parent { background: lightblue; }
+.child  { margin-top: 50px; background: yellow; }
+```
+
+👉 The parent itself will appear pushed down by 50px.
+There won’t be visible space inside the parent.
+
+---
+
+**Case 2 – Last child `margin-bottom` collapses into parent**
+
+```html
+<div class="parent">
+  <div class="child">Hello</div>
+</div>
+```
+
+```css
+.parent { background: lightblue; }
+.child  { margin-bottom: 50px; background: yellow; }
+```
+
+👉 The bottom margin collapses with the parent’s bottom — you won’t see 50px space inside.
+
+---
+
+**Case 3 – Sibling margins collapse**
+
+```html
+<div class="box1"></div>
+<div class="box2"></div>
+```
+
+```css
+.box1 { margin-bottom: 30px; height: 50px; background: red; }
+.box2 { margin-top: 40px; height: 50px; background: blue; }
+```
+
+👉 You’d expect 70px gap, but CSS collapses to the **largest (40px)**.
+
+---
+
+### 🔹 When does collapsing NOT happen?
+
+* If the parent has **padding** or **border**.
+* If the child is **absolutely positioned**.
+* If the child is set to **display: inline-block / flex / grid**, etc.
+
+---
+
+✅ So yes — for a **first child with margin-top** (and last child with margin-bottom), margin collapsing is the default behavior **unless the parent has padding/border/etc.**
+
+---
+
+Do you want me to show you a **visual diagram** (box model style) of margin collapsing for parent–child so you can “see” why it disappears?
